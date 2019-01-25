@@ -1,0 +1,30 @@
+ru:
+  refinery:
+    plugins:
+      products:
+        title: Products
+    products:
+      admin:
+        products:
+          actions:
+            create_new: Добавить Product
+            reorder: Изменить порядок Products
+            reorder_done: Закончить изменять порядок Products
+          records:
+            title: Products
+            sorry_no_results: "Извините, поиск не дал результатов."
+            no_items_yet: Записей "Products" не найдено. Нажмите "Добавить Product" чтобы создать product.
+          product:
+            view_live_html: Просмотреть product вживую <br/><em>(в новом окне)</em>
+            edit: Редактировать product
+            delete: Удалить product навсегда
+      products:
+        show:
+          other: Другие Products
+  activerecord:
+    attributes:
+      'refinery/products/product':
+        name: Name
+        description: Description
+        price: Price
+        photo: Photo

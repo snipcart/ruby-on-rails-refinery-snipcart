@@ -1,0 +1,30 @@
+cs:
+  refinery:
+    plugins:
+      products:
+        title: Products
+    products:
+      admin:
+        products:
+          actions:
+            create_new: Přidat Product
+            reorder: Řadit Products
+            reorder_done: Konec řazení Products
+          records:
+            title: Products
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Products. Zvolte "Přidat Product" pro přidání prvního product.
+          product:
+            view_live_html: Zobrazit náhled product<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit product
+            delete: Smazat product
+      products:
+        show:
+          other: Další Products
+  activerecord:
+    attributes:
+      'refinery/products/product':
+        name: Name
+        description: Description
+        price: Price
+        photo: Photo

@@ -1,0 +1,60 @@
+<% content_for :body_content_title do %>
+  <%= @product.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <p style="font-weight: bold;">
+      <%=raw @product.name %>
+    </p>
+  </section>
+  <section>
+    <p>
+      <%=raw @product.description %>
+    </p>
+  </section>
+  <section>
+    <p>
+      <%=raw @product.price %>
+    </p>
+  </section>
+  <section>
+    <p>
+      <%= image_fu @product.photo, nil, {width: 300, height: 300} %>%
+    </p>
+  </section>
+  <section>
+    <%= content_tag("button", 
+    'Buy it for ' + @product.price.to_s + "$",
+    :class => "snipcart-add-item",
+    :data => { 
+      :"item-name" => @product.name,
+      :"item-id" => @product.id,
+      :"item-image" => @product.photo,
+      :"item-url" => 'https://refinery-snipcart.herokuapp.com' + refinery.products_product_path(@product),
+      :"item-price" => @product.price,
+      :"item-description" => @product.description
+    }) %>
+  </section>
+<% end %>
+
+<% content_for :meta do%>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="YjdiNWIyOTUtZTIyMy00MWMwLTkwNDUtMzI1M2M2NTgxYjE0" id="snipcart"></script>
+  <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="products">
+      <% @products.each do |product| %>
+        <li>
+          <%= link_to product.name, refinery.products_product_path(product) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

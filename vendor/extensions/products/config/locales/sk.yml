@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      products:
+        title: Products
+    products:
+      admin:
+        products:
+          actions:
+            create_new: Pridať Product
+            reorder: Preusporiadať Products
+            reorder_done: Koniec radenia Products
+          records:
+            title: Products
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Products. Kliknite na "Pridať Product" pre pridanie prvého product.
+          product:
+            view_live_html: Zobraziť náhľad product<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť product
+            delete: Zmazať product
+      products:
+        show:
+          other: Daľšie Products
+  activerecord:
+    attributes:
+      'refinery/products/product':
+        name: Name
+        description: Description
+        price: Price
+        photo: Photo

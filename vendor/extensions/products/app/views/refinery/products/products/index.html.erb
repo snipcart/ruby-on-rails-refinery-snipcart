@@ -1,0 +1,15 @@
+<% content_for :body do %>
+  <div class="products">
+    <% @products.each do |product| %>
+      <div class="product">
+        <p>
+        <%= image_fu product.photo, nil, {width: 300, height: 300} %>
+      </p>
+        <%= link_to product.name, refinery.products_product_path(product) %>
+        
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render '/refinery/content_page' %>

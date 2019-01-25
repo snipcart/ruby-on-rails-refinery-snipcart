@@ -1,0 +1,30 @@
+it:
+  refinery:
+    plugins:
+      products:
+        title: Products
+    products:
+      admin:
+        products:
+          actions:
+            create_new: Aggiungi Nuovo Product
+            reorder: Riordina Products
+            reorder_done: Termina il Riordino di Products
+          records:
+            title: Products
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Products. Clicca "Aggiungi Nuovo Product" per aggiungere il tuo primo product.
+          product:
+            view_live_html: Guarda live questo product <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo product
+            delete: Rimuovi per sempre questo product
+      products:
+        show:
+          other: Altri Products
+  activerecord:
+    attributes:
+      'refinery/products/product':
+        name: Name
+        description: Description
+        price: Price
+        photo: Photo
